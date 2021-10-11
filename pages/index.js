@@ -11,12 +11,12 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://apif-ellas.vercel.app">APIFellas!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          Get started by visiting{' '}
+          <code className={styles.code}>https://apif-ellas.vercel.app</code>
         </p>
 
         <div className={styles.grid}>
@@ -56,8 +56,8 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Powered by{' '} APIFellas
+         
         </a>
       </footer>
     </div>

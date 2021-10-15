@@ -1,3 +1,133 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  ::root {
+    --theme: #fff; /* Background */
+    --theme-primary: hsl(180, 66%, 49%); /* Dark Orange */
+    --theme-secondary: hsl(0, 87%, 67%); /* Dark Purple */
+    --theme-tertiary: hsl(0, 0%, 75%); /* Light Green */
+    --theme-accent: hsl(0, 0%, 75%);
+  }
+  /* Background Color Utilities */
+  .bgTheme {
+    background: var(--theme);
+  }
+  .bgThemePrimary {
+    background: var(--theme-primary);
+  }
+  .bgThemeSecondary {
+    background: var(--theme-secondary);
+  }
+  .bgThemeTertiary {
+    background: var(--theme-tertiary);
+  }
+  .bgThemeAccent {
+    background: var(--theme-accent);
+  }
+
+  /* Text Color Utilities */
+  .clTheme {
+    color: var(--theme);
+  }
+  .clThemePrimary {
+    color: var(--theme-primary);
+  }
+  .clThemeSecondary {
+    color: var(--theme-secondary);
+  }
+  .clThemeTertiary {
+    color: var(--theme-tertiary);
+  }
+  .clThemeAccent {
+    color: var(--theme-accent);
+  }
+
+  /* Text Utilities */
+  .ellipsis {
+    width: 90%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+  }
+
+  html,
+  body {
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", "Roboto", "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    overflow: hidden;
+  }
+
+  /* Logo Pseudo Element */
+  .logoAfter::after {
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background: var(--theme-primary);
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+  }
+
+  /* Nav Links Utilities */
+  .navLinkAfter {
+    position: relative;
+  }
+  .navLinkAfter::after {
+    content: "";
+    height: 2px;
+    width: 0%;
+    background: var(--theme-primary);
+    border-radius: 10px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transition: all 200ms ease-in-out;
+    transform: translateX(-50%);
+  }
+  .navLinkAfter:hover::after {
+    width: 90%;
+  }
+
+  /* Global Utilities */
+  .spinner {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+  }
+  .spinnerDark {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-top-color: #333;
+  }
+  .responsiveVisibility {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  @media (min-width: 768px) {
+    .responsiveVisibility {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .primaryCustomShadow {
+    box-shadow: 0 10px 15px -3px rgb(42, 207, 207, 0.1),
+      0 4px 6px 3px rgb(42, 207, 207, 0.2);
+  }
+}
